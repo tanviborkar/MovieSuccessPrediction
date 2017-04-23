@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movie Success Predictor</title>
+  <link rel="stylesheet" href="jquery-ui-1.12.1.hotsneaks\jquery-ui.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="jquery-ui-1.12.1.hotsneaks\jquery-ui.js"></script>
+  <script>
+  $( function() {
+  	function showMovieResults() {
+      // get effect type from
+      var selectedEffect = "blind";
+       // Run the effect
+      $( "#movie-tab" ).show();
+      var movieName = $("#movie-input").val();
+      $("#movie-name").html(movieName);
+      var path="images/";
+      $('#movie-image').attr('src',path+movieName+'.jpg');
+    };
+    
+    $( "#tabs" ).tabs();
+    $( "#top10" ).selectmenu();
+    $( "#movie-button" ).on( "click", function() {
+        showMovieResults();
+      });
+    $( "#movie-tab" ).hide();
+  } );
+  </script>
+  </script>
+</head>
+<body>
+<h1>Movie Success Predictor</h1>
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Movie</a></li>
+    <li><a href="#tabs-2">Actor</a></li>
+    <li><a href="#tabs-3">Director</a></li>
+    <li><a href="#tabs-4">Genre</a></li>
+    <li><a href="#tabs-5">Top 10</a></li>
+  </ul>
+  <div id="tabs-1">
+    <p>
+    	<div class="ui-widget">
+	      	<label for="tags">Movie: </label>
+	    		<select name="movie-input" id="movie-input">
+			      <option disabled selected>Please pick one</option>
+			      <option>The Circle</option>
+			      <option>Guardians Of The Galaxy Vol. 2</option>
+			      <option>Pirates of the Caribbean - Dead Men Tell No Tales</option>
+			      <option>Everything, Everything</option>
+			      <option>The Dinner</option>
+			    </select>
+	      		<input class="ui-button ui-widget ui-corner-all" id="movie-button" type="submit" value="Search">
+    	</div>
+    </p>
+    <div id="movie-tab">
+  		<div id="effect" class="ui-widget-content ui-corner-all">
+   			<h3 id="movie-name" class="ui-widget-header ui-corner-all"></h3>
+ 		    <p>
+ 		      <div class="flex-container movie-image">
+				  <div class="flex-item"> <img id="movie-image" src="" width="200" height="300"></div>
+				  <div class="flex-item">Predicted Budget</div>
+				  <div class="flex-item">Predicted Rating</div>  
+			  </div>
+  			</p>
+ 		</div>
+	</div>
+    
+    <p>
+    
+    </p>
+  </div>
+  <div id="tabs-2">
+    <p>
+	  <div class="ui-widget">
+      <label for="tags">Actor: </label>
+      <input id="tags">
+      <input class="ui-button ui-widget ui-corner-all" type="submit" value="Search">
+      </div>
+	</p>
+  </div>
+  <div id="tabs-3">
+    <p>
+    <div class="ui-widget">
+      <label for="tags">Director: </label>
+      <input id="tags">
+      <input class="ui-button ui-widget ui-corner-all" type="submit" value="Search">
+      </div>
+    </p>
+  </div>
+  <div id="tabs-4">
+    <p>
+    <div class="ui-widget">
+      <label for="tags">Genre: </label>
+      <input id="tags">
+      <input class="ui-button ui-widget ui-corner-all" type="submit" value="Search">
+      </div>
+    </p>
+  </div>
+  <div id="tabs-5">
+    <p>
+    <div class="demo">
+		<form action="#">
+		  <fieldset>
+		    <label for="top10">Select a category</label>
+		    <select name="top10" id="top10">
+		      <option selected="selected">Movies</option>
+		      <option>Actors</option>
+		      <option>Directors</option>
+		      <option>Genres</option>
+		    </select>
+		  </fieldset>
+		</form>
+	</div>
+    </p>
+  </div>
+</div>
+
+ 
+ 
+</body>
+</html>
